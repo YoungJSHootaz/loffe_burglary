@@ -19,11 +19,11 @@ Config.GhettoPeds = { -- https://wiki.gt-mp.net/index.php/Peds
     599294057
 }
 
-Config.GhettoWeapons = { -- vapen som npcer kan få
+Config.GhettoWeapons = { -- weapons that npcer can get
     "WEAPON_BAT" 
 }
 
-Config.WeaponChance = 25 -- % att npcen får ett vapen 
+Config.WeaponChance = 25 -- % npcen gets a weapon
 
 Config.Burglary = {
     [1] = {
