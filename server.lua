@@ -48,7 +48,7 @@ AddEventHandler('loffe_burglary:setDoorHealth', function(house, health)
     if cops >= Config.Burglary[house].Cops then
         Config.Burglary[house].Door.Health = health
     else
-        sendNotification(src, 'Det är inte tillräckligt med poliser online!', 'error', 3500)
+        sendNotification(src, 'There aren't enough cops online!', 'error', 3500)
     end
     TriggerClientEvent('loffe_burglary:setHealth', -1, house, Config.Burglary[house].Door.Health)
 end)
@@ -73,13 +73,13 @@ AddEventHandler('loffe_burglary:loot', function(house, furniture)
         local randomAmount = math.random(1, 3)
         if Config.Items[randomItem].Amount ~= nil then
             xPlayer.addInventoryItem(Config.Items[randomItem].Name, Config.Items[randomItem].Amount)
-            sendNotification(src, 'Du hittade ' .. Config.Items[randomItem].Amount .. ' ' .. Config.Items[randomItem].Label)
+            sendNotification(src, 'You found ' .. Config.Items[randomItem].Amount .. ' ' .. Config.Items[randomItem].Label)
         else
             xPlayer.addInventoryItem(Config.Items[randomItem].Name, randomAmount)
-            sendNotification(src, 'Du hittade ' .. randomAmount .. ' ' .. Config.Items[randomItem].Label)
+            sendNotification(src, 'You found ' .. randomAmount .. ' ' .. Config.Items[randomItem].Label)
         end
     else
-        sendNotification(src, 'Det är inte tillräckligt med poliser online!', 'error', 3500)
+        sendNotification(src, 'There aren't enough cops online!', 'error', 3500)
     end
 end)
 
