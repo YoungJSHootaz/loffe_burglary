@@ -120,7 +120,7 @@ Citizen.CreateThread(function()
                 end
             end
             if GetDistanceBetweenCoords(coords, d.Coords, true) <= 2.0 and d.Frozen and ESX.PlayerData.job.name ~= 'police' then
-                TriggerEvent('loffe_burglary:text', 'Slå sönder dörren, den är ' .. math.floor(d.Health)/10 .. '% hel' , 0.5, 0.97, 75)
+                TriggerEvent('loffe_burglary:text', 'Break the door it is ' .. math.floor(d.Health)/10 .. '% hel' , 0.5, 0.97, 75)
                 if d.Health ~= GetEntityHealth(door) then
                     if GetSelectedPedWeapon(player) == GetHashKey("WEAPON_CROWBAR") then
                         TriggerServerEvent('loffe_burglary:setDoorHealth', i, GetEntityHealth(door))
@@ -156,7 +156,7 @@ Citizen.CreateThread(function()
                         end
                     else
                         SetEntityHealth(door, d.Health)
-                        sendNotification('Du måste slå sönder dörren med en kofot!', 'error', 2500)
+                        sendNotification('You have to break the door with a crowbar!', 'error', 2500)
                     end
                 end
                 if GetEntityHealth(door) <= 0.0 then
@@ -169,8 +169,8 @@ Citizen.CreateThread(function()
                     TaskStartScenarioInPlace(PlayerPedId(), "PROP_HUMAN_BUM_BIN", 0, true)
                     FreezeEntityPosition(PlayerPedId(), true)
                     for i = 1, 100 do
-                        TriggerEvent('loffe_burglary:helpTimed', '~INPUT_JUMP~ Sluta laga låset', 250)
-                        drawSub('Monterar upp nytt lås ~b~' .. i .. '%', 4, 1, 0.5, 0.97, 0.5, 255, 255, 255, 255, 250)
+                        TriggerEvent('loffe_burglary:helpTimed', '~INPUT_JUMP~ Stop the lock', 250)
+                        drawSub('Mounting new lock ~b~' .. i .. '%', 4, 1, 0.5, 0.97, 0.5, 255, 255, 255, 255, 250)
                         if IsControlPressed(0, 22) then
                             ClearPedTasks(PlayerPedId())
                             finished = false
