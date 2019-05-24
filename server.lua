@@ -24,7 +24,7 @@ AddEventHandler('loffe_burglary:setDoorFreezeStatus', function(house, status)
         if cops >= Config.Burglary[house].Cops then
             Config.Burglary[house].Door.Frozen = status
         else
-            sendNotification(src, 'Det är inte tillräckligt med poliser online!', 'error', 3500)
+            sendNotification(src, 'There aren't enough cops online!', 'error', 3500)
         end
     else
         Config.Burglary[house].Door.Frozen = status
